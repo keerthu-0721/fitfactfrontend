@@ -1,0 +1,85 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.about-tagline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #ffdd57;
+  text-align: center;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-card h2 {
+  margin-bottom: 1rem;
+  color: #ffdd57;
+}
+
+.about-card p,
+.about-card ul,
+.about-card ol {
+  color: white;
+  line-height: 1.6;
+}
+
+.about-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.about-card ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+.cta-card {
+  text-align: center;
+}
+
+.cta-card button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #ffdd57;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-card button:hover {
+  background-color: #ffe98a;
+  transform: scale(1.05);
+}

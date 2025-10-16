@@ -1,0 +1,112 @@
+.analyze-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.analyze-container h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffdd57;
+  color: #333;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffe98a;
+  transform: scale(1.05);
+}
+
+/* Main Result Card */
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+}
+
+.result-card h2 {
+  color: #ffdd57;
+  margin-bottom: 0.5rem;
+}
+
+/* Feature row for Verdict, Confidence, Toxicity */
+.feature-row {
+  display: flex;
+  gap: 2rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.feature {
+  flex: 1;
+  min-width: 120px;
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.feature h3 {
+  color: #00ff9d;
+  margin-bottom: 0.5rem;
+}
+
+/* Stacked info cards for Explanation & Trusted Sources */
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.info-card h3 {
+  color: #ffdd57;
+  margin-bottom: 0.5rem;
+}
+
+.info-card ul {
+  padding-left: 1.5rem;
+}
+
+.info-card li {
+  margin-bottom: 0.5rem;
+}
