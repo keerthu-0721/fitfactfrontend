@@ -110,3 +110,27 @@ button:hover {
 .info-card li {
   margin-bottom: 0.5rem;
 }
+
+/* Feedback Button Styles */
+.feedback-btn-container {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.feedback-btn {
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #ffdd57;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #000;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.feedback-btn:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+}

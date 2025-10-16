@@ -36,6 +36,11 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
+
+        <p className="register-link">
+          New User?{" "}
+          <span onClick={() => navigate("/register")}>Register Here</span>
+        </p>
       </form>
     </div>
   );

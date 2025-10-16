@@ -40,13 +40,14 @@
 //   );
 // };
 
-// export default History;
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/History.css";
 
 const History = () => {
   const [history, setHistory] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -96,6 +97,16 @@ const History = () => {
           <p className="date">
             <em>Analyzed on: {new Date(item.created_at).toLocaleString()}</em>
           </p>
+
+          {/* /* Feedback Button
+          <div className="feedback-btn-container">
+            <button
+              className="feedback-btn"
+              onClick={() => navigate(`/feedback/${item.id}`)}
+            >
+              Give Feedback
+            </button>
+          </div> */}
         </div>
       ))}
     </div>

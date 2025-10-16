@@ -200,14 +200,15 @@
 // export default AnalyzeDemo;
 // demo 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Analyze.css";
 
-const AnalyzeDemo = () => {
+const Analyze = () => {
   const [claim, setClaim] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  // Predefined claims
   const predefinedClaims = {
     "green tea burns belly fat": {
       claim: "Green tea burns belly fat",
@@ -215,12 +216,9 @@ const AnalyzeDemo = () => {
         "Green tea contains bioactive compounds called catechins, particularly EGCG, which can slightly boost metabolism and promote fat oxidation. It does not specifically target belly fat; overall fat loss depends on calorie deficit, exercise, and diet.",
       verdict: "Partially true",
       confidence: "82%",
-      trusted_sources: [
-        "Harvard Health",
-        "PubMed",
-        "Healthline"
-      ],
-      toxicity: "Low"
+      trusted_sources: ["Harvard Health", "PubMed", "Healthline"],
+      toxicity: "Low",
+      id: "demo"
     }
   };
 
@@ -231,20 +229,18 @@ const AnalyzeDemo = () => {
     setTimeout(() => {
       const key = claim.toLowerCase().trim();
       if (predefinedClaims[key]) {
-        // Use predefined claim
         setResult(predefinedClaims[key]);
       } else {
-        // Mock AI-style result for user claims
-        const mockResult = {
+        setResult({
           claim: claim,
           explanation:
             "This is a demo explanation. In a real scenario, the AI would analyze the claim and provide a science-backed explanation.",
           verdict: "Partially true",
           confidence: Math.floor(Math.random() * 30 + 70) + "%",
           trusted_sources: ["PubMed", "Healthline"],
-          toxicity: "Low"
-        };
-        setResult(mockResult);
+          toxicity: "Low",
+          id: "demo"
+        });
       }
       setLoading(false);
     }, 1000);
@@ -252,7 +248,7 @@ const AnalyzeDemo = () => {
 
   return (
     <div className="analyze-container">
-      <h1>Claim Analyzer </h1>
+      <h1>Claim Analyzer</h1>
       <textarea
         placeholder="Enter your fitness claim..."
         value={claim}
@@ -283,13 +279,11 @@ const AnalyzeDemo = () => {
             </div>
           </div>
 
-          {/* Explanation Card */}
           <div className="info-card">
             <h3>Explanation</h3>
             <p>{result.explanation}</p>
           </div>
 
-          {/* Trusted Sources Card */}
           <div className="info-card">
             <h3>Trusted Sources</h3>
             <ul>
@@ -298,13 +292,23 @@ const AnalyzeDemo = () => {
               ))}
             </ul>
           </div>
+
+          {/* Feedback Button */}
+          <div className="feedback-btn-container">
+            <button
+              className="feedback-btn"
+              onClick={() => navigate(`/feedback/${result.id}`)}
+            >
+              Give Feedback
+            </button>
+          </div>
         </div>
       )}
     </div>
   );
 };
 
-export default AnalyzeDemo;
+export default Analyze;
 
 // import React, { useState } from "react";
 // import axios from "axios";
